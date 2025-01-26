@@ -1,0 +1,106 @@
+{
+  "module": {
+    "name": "entry",
+    "type": "entry",
+    "description": "$string:module_desc",
+    "mainElement": "EntryAbility",
+    "deviceTypes": [
+      "phone"
+    ],
+    "requestPermissions": [
+      // 权限等级: normal        对所有应用开放
+      // 授权方式: system_grant  系统静默授权，无弹窗
+      {
+        //允许应用获取数据网络信息
+        "name": "ohos.permission.GET_NETWORK_INFO"
+      },
+      // -------------------- user_grant --------------------
+      // 权限等级: normal        对所有应用开放
+      // 授权方式: user_grant    需弹窗申请
+      // 日历（权限组-读写）
+      {
+        //日历 （读写-权限组）
+        "name": 'ohos.permission.READ_CALENDAR',
+        "reason": '$string:permission_reason_calendar',
+        "usedScene": {}
+      },
+      {
+        "name": 'ohos.permission.WRITE_CALENDAR',
+        "reason": '$string:permission_reason_notification',
+        "usedScene": {}
+      },
+      // 相机
+      {
+        "name": "ohos.permission.CAMERA",
+        "reason": '$string:permission_reason_camera',
+        "usedScene": {}
+      },
+      // 麦克风
+      {
+        "name": "ohos.permission.MICROPHONE",
+        "reason": '$string:permission_reason_microphone',
+        "usedScene": {}
+      },
+      // 位置信息（权限组）
+      {
+        "name": "ohos.permission.APPROXIMATELY_LOCATION",
+        "reason": '$string:permission_reason_location',
+        "usedScene": {}
+      },
+      {
+        "name": "ohos.permission.LOCATION",
+        "reason": '$string:permission_reason_location',
+        "usedScene": {}
+      },
+      //------system_basic + user_grant----------
+      // 这是受限开放权限 需要签名证书 开发阶段可deveco快速生成 上线阶段要到agc生成签名证书
+      // 通讯录
+      {
+        "name": "ohos.permission.READ_CONTACTS",
+        "reason": '$string:permission_reason_contact',
+        "usedScene": {}
+      },
+      {
+        "name": "ohos.permission.WRITE_CONTACTS",
+        "reason": '$string:permission_reason_contact',
+        "usedScene": {}
+      },
+      // 照片
+      {
+        "name": "ohos.permission.READ_IMAGEVIDEO",
+        "reason": "$string:permission_reason_imageVideo",
+        "usedScene": {}
+      },
+      {
+        "name": "ohos.permission.WRITE_IMAGEVIDEO",
+        "reason": "$string:permission_reason_imageVideo",
+        "usedScene": {}
+      }
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

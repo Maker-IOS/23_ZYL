@@ -1,0 +1,51 @@
+{
+  "app": {
+    // 证书签名信息，克隆项目时，先删除默认的签名信息，在通过deveco自己生成
+    // 应用运行到真机也要签名
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\a1503\\.ohos\\config\\default_hm_guardian_app_yqTdsZPCRSUQ6cObnoVLh5qthtj7jmWKmouACzqMmFc=.cer",
+          "storePassword": "0000001B3501F99C7AA29A3A12CB6DDA84BE51FF0954F29A386D136880E6316A7E16E4C5FF15A2AF8119E2",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B54C78354D01AAF3CB85FBE37E3774DE816B1CD5C2B672859C3863BC4FBB0FDEE7B90A4D26736D7",
+          "profile": "C:\\Users\\a1503\\.ohos\\config\\default_hm_guardian_app_yqTdsZPCRSUQ6cObnoVLh5qthtj7jmWKmouACzqMmFc=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\a1503\\.ohos\\config\\default_hm_guardian_app_yqTdsZPCRSUQ6cObnoVLh5qthtj7jmWKmouACzqMmFc=.p12"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "5.0.0(12)",
+        "runtimeOS": "HarmonyOS",
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
